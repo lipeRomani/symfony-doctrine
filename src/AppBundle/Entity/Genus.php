@@ -43,6 +43,12 @@ class Genus
      */
     private $funFact;
 
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isPublished = true;
+
     /**
      * @return mixed
      */
@@ -109,6 +115,22 @@ class Genus
 
     public function getUpdateAt(){
         return new \DateTime('-' . rand(0,100). ' days');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsPublished()
+    {
+        return $this->isPublished;
+    }
+
+    /**
+     * @param mixed $isPublished
+     */
+    public function setIsPublished($isPublished)
+    {
+        $this->isPublished = $isPublished;
     }
 
 
